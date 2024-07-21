@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../controllers/rd_calc_controller.dart';
 import '../widget/rd_calc_button.dart';
 
@@ -61,18 +60,7 @@ class RdCalcScreen extends StatelessWidget {
                       text: '⌫',
                       isEqual: true,
                     ),
-                    // RdCalcButton(
-                    //   'sin',
-                    //   onPressed: () => controller.addToExpression('sin('),
-                    //   text: 'sin',
-                    //   isEqual: true,
-                    // ),
-                    // RdCalcButton(
-                    //   'cos',
-                    //   onPressed: () => controller.addToExpression('cos('),
-                    //   text: 'cos',
-                    //   isEqual: true,
-                    // ),
+                    
                     RdCalcButton(
                       '/',
                       onPressed: () => controller.addToExpression('/'),
