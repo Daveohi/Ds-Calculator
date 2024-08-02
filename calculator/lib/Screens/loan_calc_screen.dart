@@ -84,8 +84,8 @@ class LoanCalcScreen extends StatelessWidget {
                     height: 30,
                     child: CustomTextField(
                       value: controller.interestRate.value.toStringAsFixed(1),
-                      onChanged: (value) => controller.updateInterestRate(
-                          double.tryParse(value) ?? 10000.0),
+                      onChanged: (value) => controller
+                          .updateInterestRate(double.tryParse(value) ?? 0.0),
                       suffix: '%',
                     ),
                   ),
@@ -102,8 +102,8 @@ class LoanCalcScreen extends StatelessWidget {
                           thumbColor: Colors.white,
                           activeColor: Colors.teal[300],
                           value: controller.interestRate.value,
-                          min: 1,
-                          max: 20,
+                          min: 0.0,
+                          max: 50,
                           divisions: 190,
                           onChanged: controller.updateInterestRate,
                         ),
@@ -121,7 +121,7 @@ class LoanCalcScreen extends StatelessWidget {
                     child: CustomTextField(
                       value: controller.loanTenure.value.toString(),
                       onChanged: (value) => controller
-                          .updateLoanTenure(double.tryParse(value) ?? 10000),
+                          .updateLoanTenure(double.tryParse(value) ?? 0),
                       suffix: 'Yr',
                     ),
                   ),
@@ -138,8 +138,8 @@ class LoanCalcScreen extends StatelessWidget {
                           thumbColor: Colors.white,
                           activeColor: Colors.teal[300],
                           value: controller.loanTenure.value.toDouble(),
-                          min: 1,
-                          max: 30,
+                          min: 0.0,
+                          max: 100,
                           divisions: 29,
                           onChanged: controller.updateLoanTenure,
                         ),
