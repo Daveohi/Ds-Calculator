@@ -12,8 +12,6 @@ class RdCalcButton extends StatelessWidget {
       required this.onPressed,
       required this.isEqual});
 
-  // CalculatorButton(this.text, {required this.onPressed, this.isEqual = false});
-
   @override
   Widget build(BuildContext context) {
     return Padding(

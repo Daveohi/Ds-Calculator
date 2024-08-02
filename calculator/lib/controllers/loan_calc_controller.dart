@@ -7,7 +7,7 @@ class LoanCalcController extends GetxController {
   final interestRate = 6.5.obs;
   final loanTenure = 5.obs;
 
-  final minLoanAmount = 1000.0;
+  final minLoanAmount = 0.0;
   final maxLoanAmount = 1000000.0;
 
 // Monthly EMI for the given loan amount, interest rate, and loan tenure.

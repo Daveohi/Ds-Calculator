@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           'Electro',
           style: TextStyle(
               color: Get.isDarkMode
-                  ? Color.fromARGB(255, 3, 23, 39)
+                  ? const Color.fromARGB(255, 3, 23, 39)
                   // style: TextStyle(color: Color.fromARGB(255, 3, 23, 39)
                   : Colors.black),
           // style: TextStyle(color: Color.fromARGB(255, 3, 23, 39)),

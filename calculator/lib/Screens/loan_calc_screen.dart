@@ -1,193 +1,3 @@
-// import 'package:calculator/controllers/loan_calc_controller.dart';
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-
-// import '../widget/custom_text_field.dart';
-
-// // ignore: use_key_in_widget_constructors
-// class LoanCalcScreen extends StatelessWidget {
-//   // const LoanCalcScreen({super.key});
-
-//   final LoanCalcController controller = Get.put(LoanCalcController());
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         leading: Image.asset('assets/logo1.png'),
-//         leadingWidth: 50,
-//         title: const Text(
-//           'Electro',
-//           style: TextStyle(color: Color.fromARGB(255, 3, 23, 39)),
-//         ),
-//         titleSpacing: 5,
-//         backgroundColor: Colors.white,
-//         foregroundColor: Colors.black,
-//         elevation: 0,
-//       ),
-//       body: SingleChildScrollView(
-//         child: Padding(
-//           padding: const EdgeInsets.all(16.0),
-//           child: Column(
-//             // crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               Row(
-//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                 children: [
-//                   const Text('Loan amount'),
-//                   CustomTextField(
-//                     value: controller.loanAmount.value.toString(),
-//                     onChanged: (value) => controller.updateLoanAmount(
-//                         double.tryParse(value) ?? controller.minLoanAmount),
-//                     prefix: '₹',
-//                   ),
-//                 ],
-//               ),
-//               Obx(
-//                 () => Row(
-//                   children: [
-//                     Expanded(
-//                       flex: 7,
-//                       child: Slider(
-//                         value: controller.loanAmount.value,
-//                         min: controller.minLoanAmount,
-//                         max: controller.maxLoanAmount,
-//                         onChanged: controller.updateLoanAmount,
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//               const SizedBox(
-//                 height: 8,
-//               ),
-//               // const Text('Rate of interest (p.a)'),
-//               Row(
-//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                 children: [
-//                   const Text('Rate of interest'),
-//                   CustomTextField(
-//                     value: controller.interestRate.value.toString(),
-//                     onChanged: (value) => controller
-//                         .updateInterestRate(double.tryParse(value) ?? 1.0),
-//                     suffix: '%',
-//                   ),
-//                 ],
-//               ),
-//               Obx(
-//                 () => Row(
-//                   children: [
-//                     Expanded(
-//                       flex: 3,
-//                       child: Slider(
-//                         value: controller.interestRate.value.toDouble(),
-//                         min: 1,
-//                         max: 20,
-//                         divisions: 190,
-//                         onChanged: controller.updateInterestRate,
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//               const SizedBox(
-//                 height: 8,
-//               ),
-//               Row(
-//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                 children: [
-//                   const Text('Loan tenure (years)'),
-//                   CustomTextField(
-//                     value: controller.loanTenure.value.toString(),
-//                     onChanged: (value) => controller
-//                         .updateLoanTenure(double.tryParse(value) ?? 1),
-//                     suffix: 'y',
-//                   ),
-//                 ],
-//               ),
-//               Obx(
-//                 () => Row(
-//                   children: [
-//                     Expanded(
-//                       flex: 3,
-//                       child: Slider(
-//                         value: controller.loanTenure.value.toDouble(),
-//                         min: 1,
-//                         max: 30,
-//                         divisions: 29,
-//                         onChanged: controller.updateLoanTenure,
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//               const SizedBox(height: 32),
-//               Obx(() => Column(
-//                     crossAxisAlignment: CrossAxisAlignment.start,
-//                     children: [
-//                       Row(
-//                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                         children: [
-//                           const Text('Monthly EMI: '),
-//                           Text('₹${controller.monthlyEMI.toStringAsFixed(0)}'),
-//                         ],
-//                       ),
-//                       Row(
-//                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                         children: [
-//                           const Text('Principal amount:'),
-//                           Text(
-//                               '₹${controller.loanAmount.value.toStringAsFixed(0)}'),
-//                         ],
-//                       ),
-//                       const Row(
-//                         children: [
-//                           Text('Total interest: '),
-//                           Text('{controller.totalInterest.toStringAsFixed(0)}'),
-//                         ],
-//                       ),
-//                       Row(
-//                         children: [
-//                           const Text('Total amount: '),
-//                           Text('₹${controller.totalAmount.toStringAsFixed(0)}'),
-//                         ],
-//                       ),
-//                     ],
-//                   )),
-//               const Spacer(),
-//               Row(
-//                 children: [
-//                   Expanded(
-//                     child: ElevatedButton(
-//                       onPressed: () {
-//                         // Implement share functionality
-//                       },
-//                       style: ElevatedButton.styleFrom(
-//                           backgroundColor: Colors.teal),
-//                       child: const Text('SHARE'),
-//                     ),
-//                   ),
-//                   const SizedBox(width: 16),
-//                   Expanded(
-//                     child: OutlinedButton(
-//                       onPressed: () {
-//                         // Implement save as PDF functionality
-//                       },
-//                       style: OutlinedButton.styleFrom(
-//                           foregroundColor: Colors.teal),
-//                       child: const Text('Save as PDF'),
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import '../controllers/loan_calculator_controller.dart';
@@ -277,8 +87,8 @@ class LoanCalcScreen extends StatelessWidget {
                     height: 30,
                     child: CustomTextField(
                       value: controller.interestRate.value.toStringAsFixed(1),
-                      onChanged: (value) => controller.updateInterestRate(
-                          double.tryParse(value) ?? 10000.0),
+                      onChanged: (value) => controller
+                          .updateInterestRate(double.tryParse(value) ?? 0.0),
                       suffix: '%',
                     ),
                   ),
@@ -295,8 +105,8 @@ class LoanCalcScreen extends StatelessWidget {
                           thumbColor: Colors.white,
                           activeColor: Colors.teal[300],
                           value: controller.interestRate.value,
-                          min: 1,
-                          max: 20,
+                          min: 0.0,
+                          max: 50,
                           divisions: 190,
                           onChanged: controller.updateInterestRate,
                         ),
@@ -314,7 +124,7 @@ class LoanCalcScreen extends StatelessWidget {
                     child: CustomTextField(
                       value: controller.loanTenure.value.toString(),
                       onChanged: (value) => controller
-                          .updateLoanTenure(double.tryParse(value) ?? 10000),
+                          .updateLoanTenure(double.tryParse(value) ?? 0),
                       suffix: 'Yr',
                     ),
                   ),
@@ -331,8 +141,8 @@ class LoanCalcScreen extends StatelessWidget {
                           thumbColor: Colors.white,
                           activeColor: Colors.teal[300],
                           value: controller.loanTenure.value.toDouble(),
-                          min: 1,
-                          max: 30,
+                          min: 0.0,
+                          max: 100,
                           divisions: 29,
                           onChanged: controller.updateLoanTenure,
                         ),
